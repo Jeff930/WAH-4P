@@ -1,18 +1,10 @@
-<!--
-  Generated template for the FinishPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Finish</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+<div id="finished">
+    <img class="animation" alt="spasms animation" src="assets/imgs/smsfinished.png">
+    <h4>WAH-4P has set {{service.total_Messages}} messages<br> in this session!</h4>
+    <h5 class="nomargin green2">Sent Messages: {{service.sent_Messages}} messages</h5>
+    <h5 class="nomargin red2">Failed Messages: {{service.failed_Messages}} messages </h5>
+    <button ion-button icon-left (click)="service.onBack()">
+    	<ion-icon name="done-all" ></ion-icon>
+      	Back ({{service.timer2}})
+    </button>
+</div>
