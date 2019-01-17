@@ -6,12 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ChangeIpPage } from '../pages/change-ip/change-ip';
+import { ErrorPage } from '../pages/error/error';
+import { SendPage } from '../pages/send/send';
+import { FinishPage } from '../pages/finish/finish';
 import { SenderProvider } from '../providers/sender/sender';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ChangeIpPage,
+    ErrorPage,
+    SendPage,
+    FinishPage,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +28,11 @@ import { SenderProvider } from '../providers/sender/sender';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ChangeIpPage,
+    ErrorPage,
+    SendPage,
+    FinishPage,
   ],
   providers: [
     StatusBar,
