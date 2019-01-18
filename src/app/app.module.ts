@@ -12,6 +12,7 @@ import { SendPage } from '../pages/send/send';
 import { FinishPage } from '../pages/finish/finish';
 import { SenderProvider } from '../providers/sender/sender';
 
+import { ComponentsModule } from './../components/components.module';
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +24,8 @@ import { SenderProvider } from '../providers/sender/sender';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
