@@ -1,19 +1,37 @@
-<header></header>
 
-<div id="standby">
-    <img class="animation" alt="spasms animation" src="assets/imgs/smsstandby.gif">
-    <h6 text-left>Server IP Address:</h6> 
-    <div>
-    	<ion-card class="card2" float-left>
-      		<p class="ip" text-center>192.168.0.1</p>
-    	</ion-card>
-    	<button float-left class="change" ion-button icon-left (click)="service.onIpChange()">
-      		<ion-icon name="settings"></ion-icon>
+
+<ion-content>
+	<header></header>
+	<ion-grid  margin-top>
+  		<ion-row>
+    		<ion-col offset-1 col-10>
+      			<img class="animation" alt="spasms animation" src="assets/imgs/smsstandby.gif">
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+    		<ion-col col-10>
+      			<h6 text-left>Server IP Address:</h6> 
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+    		<ion-col col-8>
+      			<ion-card class="card2">
+      				<p class="ip" text-center>192.168.0.1</p>
+    			</ion-card>
+    		</ion-col>
+    		<ion-col col-4>
+      			<button float-left class="change" ion-button icon-left (click)="service.onIpChange()">
+      				<ion-icon name="settings"></ion-icon>
       			Change
-    	</button>
-    </div>
-    <br>
-    <br>
-    <br>
-    <h5>WAH-4P is waiting for new messages <br>from server at 192.168.0.1</h5> 
-</div>
+    			</button>
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+    		<ion-col>
+      			<h5 text-center>WAH-4P is waiting for new messages <br>from server at 192.168.0.1</h5>
+    		</ion-col>
+  		</ion-row>
+
+</ion-grid>
+     
+</ion-content>
