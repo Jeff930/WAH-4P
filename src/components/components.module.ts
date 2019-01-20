@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header/header';
-import { LgUnameComponent } from './lg-uname/lg-uname';
+import { LguNameComponent } from './lgu-name/lgu-name';
 import { IonicModule } from 'ionic-angular';
 @NgModule({
 	declarations: [HeaderComponent,
     HeaderComponent,
-    LgUnameComponent],
+    LguNameComponent],
 	imports: [IonicModule],
 	exports: [HeaderComponent,
     HeaderComponent,
-    LgUnameComponent]
+    LguNameComponent]
 })
 export class ComponentsModule {}
