@@ -1,20 +1,30 @@
 <header></header>
-<div id="ipChange" class="hidden">
-	<br>
-    <h6 text-left>Server IP Address:</h6> 
-    <div>
-    	<ion-card float-left>
-       		<ion-input text-center  [(ngModel)]="service.temp_Address" placeholder="{{service.ip_Address}}"></ion-input>
+<ion-content margin-top>
+	<ion-grid  margin-top>
+  		<ion-row>
+    		<ion-col>
+      			 <h6 text-left>Server IP Address:</h6> 
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+    		<ion-col offset-1 col-10>
+      			<ion-card float-left>
+       		<ion-input text-center  placeholder="192.168.0.1"></ion-input>
     	</ion-card>
-    </div>
-    <br>
-    <br>
-    <button ion-button icon-left class="change red" (click)="service.onIpCancel()"> 
+    		</ion-col>
+  		</ion-row>
+  		<ion-row offset-1 col-10>
+    		<ion-col col-6>
+      			<button col-12 ion-button icon-left color="danger" (click)="service.onIpCancel()"> 
     	<ion-icon name="done-all"></ion-icon>
       	Cancel
     </button>
-    <button ion-button icon-left class="change green" (click)="service.onIpSave()"> 
+    		</ion-col>
+    		<ion-col col-6>
+      			<button col-12 ion-button icon-left color="green" (click)="service.onIpSave()"> 
       	<ion-icon name="done-all"></ion-icon>
       	Save
    	</button>
-</div>
+    		</ion-col>
+  		</ion-row>
+  		</ion-grid></ion-content>
