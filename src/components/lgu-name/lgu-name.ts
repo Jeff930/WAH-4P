@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
  * Components.
  */
 @Component({
-  selector: 'lg-uname',
-  templateUrl: 'lg-uname.html'
+  selector: 'lgu-name',
+  templateUrl: 'lgu-name.html'
 })
-export class LgUnameComponent {
+export class LguNameComponent {
 
   text: string;
 
