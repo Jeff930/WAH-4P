@@ -1,11 +1,14 @@
+<header></header>
 
-
-<ion-content>
-	<header></header>
+<ion-content margin-top>
+	
+	<div margin-top margin-horizontal>
+	<lgu-name></lgu-name>
+</div>
 	<ion-grid  margin-top>
   		<ion-row>
     		<ion-col offset-1 col-10>
-      			<img class="animation" alt="spasms animation" src="assets/imgs/smsstandby.gif">
+      			<img alt="spasms animation" src="assets/imgs/smsstandby.gif">
     		</ion-col>
   		</ion-row>
   		<ion-row>
@@ -15,12 +18,12 @@
   		</ion-row>
   		<ion-row>
     		<ion-col col-8>
-      			<ion-card class="card2">
-      				<p class="ip" text-center>192.168.0.1</p>
+      			<ion-card class="ip-card">
+      				<p class="ip-text" text-center >192.168.0.1</p>
     			</ion-card>
     		</ion-col>
     		<ion-col col-4>
-      			<button float-left class="change" ion-button icon-left (click)="service.onIpChange()">
+      			<button col-12 class="change-button" ion-button icon-left (click)="service.onIpChange()">
       				<ion-icon name="settings"></ion-icon>
       			Change
     			</button>
@@ -31,7 +34,10 @@
       			<h5 text-center>WAH-4P is waiting for new messages <br>from server at 192.168.0.1</h5>
     		</ion-col>
   		</ion-row>
-
+  		<button col-12 ion-button icon-left (click)="error()">
+      				<ion-icon name="settings"></ion-icon>
+      			Next
+    			</button>
 </ion-grid>
      
 </ion-content>
