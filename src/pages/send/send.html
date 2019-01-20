@@ -1,20 +1,38 @@
 <header></header>
-<div id="sending" class="hidden">
-    <img class="animation" alt="spasms animation" src="assets/imgs/smssending.gif">
-    <h5>WAH-4P is sending messages</h5>
- 
-    <div class="progress-outer">
-      <div class="progress-inner" [style.width]="service.progress + '%'">
-          0%
-      </div>
-    </div>
-    <h6>0 out of 10 finished</h6>
-    <div id="disconnected" class="hidden">
-      <h6 class="redtext">The server cannot be reached</h6>
-    </div>
-    <br>
-   <!--  <button ion-button icon-left class="stop" (click)="service.showStopped()">
-      <ion-icon name="square" ></ion-icon>
-      Stop
-    </button> -->
-</div>
+<ion-content margin-top>
+	
+	<div margin-top margin-horizontal>
+		<lgu-name></lgu-name>
+	</div>
+	<ion-grid  margin-top>
+  		<ion-row>
+    		<ion-col offset-1 col-10>
+      			<img alt="spasms animation" src="assets/imgs/smssending.gif">
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+    		<ion-col>
+      			<h5 text-center>WAH-4P is sending messages</h5>
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+  			<ion-col offset-1 col-10>
+  				<div class="progress-outer">
+      <!-- <div class="progress-inner" [style.width]="service.progress + '%'"> -->
+      				<div class="progress-inner">
+          			0%
+      				</div>
+    			</div>
+    		</ion-col>
+    	</ion-row>
+    	<ion-row>
+    		<ion-col>
+      			<h6 text-center>0 out of 10 finished</h6>
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+    		<ion-col>
+      			<h6 text-center class="red-text">The server cannot be reached</h6>
+    		</ion-col>
+  		</ion-row>
+  			</ion-grid></ion-content>
