@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ErrorPage} from '../error/error';
+import { ChangeIpPage} from '../change-ip/change-ip';
+import { SendPage } from '../send/send';
+import { FinishPage } from '../finish/finish';
 
 /**
  * Generated class for the HomePage page.
@@ -20,6 +24,10 @@ export class HomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+  }
+
+  error(){
+    this.navCtrl.setRoot(FinishPage);
   }
 
 }
