@@ -1,11 +1,36 @@
 <header></header>
-<div id="finished">
-    <img class="animation" alt="spasms animation" src="assets/imgs/smsfinished.png">
-    <h4>WAH-4P has set {{service.total_Messages}} messages<br> in this session!</h4>
-    <h5 class="nomargin green2">Sent Messages: {{service.sent_Messages}} messages</h5>
-    <h5 class="nomargin red2">Failed Messages: {{service.failed_Messages}} messages </h5>
-    <button ion-button icon-left (click)="service.onBack()">
-    	<ion-icon name="done-all" ></ion-icon>
-      	Back ({{service.timer2}})
-    </button>
-</div>
+<ion-content margin-top>
+	
+	<div margin-top margin-horizontal>
+		<lgu-name></lgu-name>
+	</div>
+	<ion-grid>
+  		<ion-row>
+    		<ion-col offset-1 col-10>
+      			 <img alt="spasms animation" src="assets/imgs/smsfinished.png">
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+    		<ion-col>
+      			<h4 text-center>WAH-4P has sent 100 messages<br> in this session!</h4>
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+  			<ion-col>
+  				 <h5 class="red-text" text-center margin-horizontal>Sent Messages: 50 messages</h5>
+    		</ion-col>
+    	</ion-row>
+    	<ion-row>
+    		<ion-col>
+      			<h5 class="green-text" text-center margin-horizontal>Failed Messages: 50 messages </h5>
+    		</ion-col>
+  		</ion-row>
+  		<ion-row>
+    		<ion-col offset-3 col-6>
+      			<button col-12 ion-button icon-left (click)="service.onBack()" center>
+    				<ion-icon name="done-all" ></ion-icon>
+      				Back (5)
+   				</button>
+    		</ion-col>
+  		</ion-row>
+  			</ion-grid></ion-content>
