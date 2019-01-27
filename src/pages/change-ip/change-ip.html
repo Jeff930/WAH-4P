@@ -1,7 +1,22 @@
 <header></header>
 <ion-content margin-top>
-	<ion-grid  margin-top>
-  		<ion-row>
+	<ion-grid margin-vertical>
+		<ion-row>
+    		<ion-col>
+      			 <h6 text-left>Protocol Identifier:</h6> 
+    		</ion-col>
+  		</ion-row>
+  		<ion-row offset-1 col-10>
+    		<ion-col col-6>
+      			<ion-checkbox></ion-checkbox>
+      			<label>HTTP</label>
+    		</ion-col>
+    		<ion-col col-6>
+      			<ion-checkbox></ion-checkbox>
+      			<label>HTTPS</label>
+    		</ion-col>
+  		</ion-row>
+  		<ion-row margin-top>
     		<ion-col>
       			 <h6 text-left>Server IP Address:</h6> 
     		</ion-col>
@@ -15,14 +30,15 @@
   		</ion-row>
   		<ion-row offset-1 col-10>
     		<ion-col col-6>
+
       			<button col-12 ion-button icon-left color="danger" (click)="service.onIpCancel()"> 
-    	<ion-icon name="done-all"></ion-icon>
+    			<ion-icon name="custom-close"></ion-icon>
       	Cancel
     </button>
     		</ion-col>
     		<ion-col col-6>
       			<button col-12 ion-button icon-left color="green" (click)="service.onIpSave()"> 
-      	<ion-icon name="done-all"></ion-icon>
+      	<ion-icon name="checkmark-circle-outline"></ion-icon>
       	Save
    	</button>
     		</ion-col>
