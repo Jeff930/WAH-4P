@@ -22,6 +22,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomePage {
 
   startInterval:any;
+  test;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sms: SMS, public sender:SenderProvider,public http: HttpClient) {
   }
@@ -33,9 +34,10 @@ export class HomePage {
 
   getData(){
     this.getLGU();
-    this.getMessages();
+    this.test=setTimeout(() => { 
+      this.getMessages();}, 5000);
   }
-
+  
   error(){
     this.navCtrl.setRoot(ErrorPage);
   }
@@ -51,13 +53,14 @@ export class HomePage {
 });}
 
 getMessages(){
-  this.http.get('../../assets/sample.json').toPromise()
+  this.http.get('../../assets/sampe.json').toPromise()
   //this.http.get('http://'+'/api/spasms/getRHU').toPromise()
   .then((data:any)=> {
+    console.log(JSON.stringify(data));
     this.sender.sendMessages(data); 
-    console.log(this.sender.totalMessages);
+    
 },error=>{console.log("Cannot retrieve messages");
- // this.navCtrl.setRoot(ErrorPage);
+  this.navCtrl.setRoot(ErrorPage);
 });
     
   }
