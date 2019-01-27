@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ErrorPage} from '../error/error';
 import { ChangeIpPage} from '../change-ip/change-ip';
 import { SendPage } from '../send/send';
-import { FinishPage } from '../finish/finish';
+import { SMS } from '@ionic-native/sms';
+import { SenderProvider} from '../../providers/sender/sender';
 
 /**
  * Generated class for the HomePage page.
@@ -19,7 +20,7 @@ import { FinishPage } from '../finish/finish';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sms: SMS, public sender:SenderProvider) {
   }
 
   ionViewDidLoad() {
@@ -27,7 +28,7 @@ export class HomePage {
   }
 
   error(){
-    this.navCtrl.setRoot(FinishPage);
+    this.navCtrl.setRoot(ChangeIpPage);
   }
 
 }
