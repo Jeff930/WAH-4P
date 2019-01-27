@@ -10,6 +10,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SenderProvider {
 
+  public LGU_Name;
+
   constructor(public http: HttpClient) {
     console.log('Hello SenderProvider Provider');
   }
