@@ -11,9 +11,14 @@ import { Injectable } from '@angular/core';
 export class SenderProvider {
 
   public LGU_Name;
+  public totalMessages;
 
   constructor(public http: HttpClient) {
     console.log('Hello SenderProvider Provider');
+  }
+
+  sendMessages(any){
+
   }
 
 }

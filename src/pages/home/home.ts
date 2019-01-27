@@ -21,37 +21,45 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage {
 
+  startInterval:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public sms: SMS, public sender:SenderProvider,public http: HttpClient) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+    this.getData();
+  }
+
+  getData(){
     this.getLGU();
+    this.getMessages();
   }
 
   error(){
-    this.navCtrl.setRoot(ChangeIpPage);
+    this.navCtrl.setRoot(ErrorPage);
   }
 
   getLGU(){
-    this.http.get('../../assets/RU.json').toPromise()
+    this.http.get('../../assets/RHU.json').toPromise()
     //this.http.get('http://'+'/api/spasms/getRHU').toPromise()
     .then((data:any)=> {
       this.sender.LGU_Name = data[0].hfhudname; 
       console.log(this.sender.LGU_Name);
-      
-    // if (this.LGU_name.length<=25){
-    //   document.getElementById('LGU').style.fontSize = "6.2vw";
-    // }else if (this.LGU_name.length<=30){
-    //         document.getElementById('LGU').style.fontSize = "5.4vw";
-    //       }else if (this.LGU_name.length<=35){
-    //               document.getElementById('LGU').style.fontSize = "4.6vw";
-    //             }else if (this.LGU_name.length<=40){
-    //                     document.getElementById('LGU').style.fontSize = "3.8vw";
-    //                   }else{
-    //                     document.getElementById('LGU').style.fontSize = "3.2vw";}
-  },error=>{this.sender.LGU_Name = "Cannot retrieve RHU name";
+  },error=>{this.sender.LGU_Name = "**Cannot retrieve RHU name**";
     console.log("Cannot retrieve RHU name");
+});}
+
+getMessages(){
+  this.http.get('../../assets/sample.json').toPromise()
+  //this.http.get('http://'+'/api/spasms/getRHU').toPromise()
+  .then((data:any)=> {
+    this.sender.sendMessages(data); 
+    console.log(this.sender.totalMessages);
+},error=>{console.log("Cannot retrieve messages");
+ // this.navCtrl.setRoot(ErrorPage);
 });
     
-  }}
+  }
+ 
+}
