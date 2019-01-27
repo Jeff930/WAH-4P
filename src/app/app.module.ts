@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { HttpModule } from '@angular/http';
+
 import { SMS } from '@ionic-native/sms';
 import { NativeStorage } from '@ionic-native/native-storage';
 
@@ -16,6 +16,7 @@ import { FinishPage } from '../pages/finish/finish';
 import { SenderProvider } from '../providers/sender/sender';
 
 import { ComponentsModule } from './../components/components.module';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +27,7 @@ import { ComponentsModule } from './../components/components.module';
     FinishPage,
   ],
   imports: [
-    HttpModule,
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule
