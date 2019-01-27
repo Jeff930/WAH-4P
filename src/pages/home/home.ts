@@ -34,7 +34,7 @@ export class HomePage {
   }
 
   getLGU(){
-    this.http.get('../../assets/RHU.json').toPromise()
+    this.http.get('../../assets/RU.json').toPromise()
     //this.http.get('http://'+'/api/spasms/getRHU').toPromise()
     .then((data:any)=> {
       this.sender.LGU_Name = data[0].hfhudname; 
@@ -50,7 +50,8 @@ export class HomePage {
     //                     document.getElementById('LGU').style.fontSize = "3.8vw";
     //                   }else{
     //                     document.getElementById('LGU').style.fontSize = "3.2vw";}
-  },error=>console.log("Cannot retrieve RHU name")
-  )}
-
-}
+  },error=>{this.sender.LGU_Name = "Cannot retrieve RHU name";
+    console.log("Cannot retrieve RHU name");
+});
+    
+  }}

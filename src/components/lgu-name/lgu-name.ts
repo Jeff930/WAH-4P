@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SenderProvider} from '../../providers/sender/sender';
 
 /**
  * Generated class for the LgUnameComponent component.
@@ -14,7 +15,7 @@ export class LguNameComponent {
 
   text: string;
 
-  constructor() {
+  constructor(public sender:SenderProvider) {
     console.log('Hello LgUnameComponent Component');
     this.text = 'Hello World';
   }
