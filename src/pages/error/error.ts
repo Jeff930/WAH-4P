@@ -15,11 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ErrorPage {
 
+  errorTimer;
+  errorInterval;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ErrorPage');
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter HomePage');
+    this.errorInterval=5;
+    this.startErrorTimer();
+  }
+
+  startErrorTimer(){
+    this.errorTimer=setTimeout(() => { 
+      console.log("called");
+      this.getMessages();}, 5000);
   }
 
 }
