@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { HomePage} from '../home/home';
 /**
  * Generated class for the ErrorPage page.
  *
@@ -23,14 +23,20 @@ export class ErrorPage {
 
   ionViewDidEnter() {
     console.log('ionViewDidEnter HomePage');
-    this.errorInterval=5;
+    this.errorTimer=3;
     this.startErrorTimer();
   }
 
   startErrorTimer(){
-    this.errorTimer=setTimeout(() => { 
+    setInterval(() => { 
+      this.errorTimer--;
       console.log("called");
-      this.getMessages();}, 5000);
-  }
+    }, 1000);
+    setTimeout(() => { 
+      this.navCtrl.setRoot(HomePage);
+      console.log("called");
+    }, 3000);
+   
 
+  }
 }
