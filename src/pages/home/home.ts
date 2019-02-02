@@ -33,7 +33,7 @@ export class HomePage {
 
   getData(){
     this.getLGU();
-    this.homeTimer=setTimeout(() => { 
+    setTimeout(() => { 
       console.log("called");
       this.getMessages();}, 5000);
   }
