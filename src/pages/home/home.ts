@@ -21,20 +21,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage {
 
-  startInterval:any;
-  test;
+  homeTimer;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sms: SMS, public sender:SenderProvider,public http: HttpClient) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter HomePage');
     this.getData();
   }
 
   getData(){
     this.getLGU();
-    this.test=setTimeout(() => { 
+    this.homeTimer=setTimeout(() => { 
+      console.log("called");
       this.getMessages();}, 5000);
   }
   
