@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ChangeIpPage page.
@@ -22,4 +23,9 @@ export class ChangeIpPage {
     console.log('ionViewDidLoad ChangeIpPage');
   }
 
+  returnToHome(){
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  saveIP(){}
 }

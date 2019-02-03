@@ -66,5 +66,10 @@ getMessages(){
 });
     
   }
+
+changeIP(){
+  clearTimeout(this.homeTimeout);
+  this.navCtrl.setRoot(ChangeIpPage);
+}
  
 }
