@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { SenderProvider} from '../../providers/sender/sender';
 
 /**
  * Generated class for the ChangeIpPage page.
@@ -16,7 +17,9 @@ import { HomePage } from '../home/home';
 })
 export class ChangeIpPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  inputIpAddress;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public sender:SenderProvider) {
   }
 
   ionViewDidLoad() {
@@ -27,5 +30,8 @@ export class ChangeIpPage {
     this.navCtrl.setRoot(HomePage);
   }
 
-  saveIP(){}
+  saveIP(){
+    this.sender.ipAddress=this.inputIpAddress;
+    this.returnToHome();
+  }
 }
