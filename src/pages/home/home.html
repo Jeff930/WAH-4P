@@ -19,7 +19,7 @@
   		<ion-row>
     		<ion-col col-8>
       			<ion-card class="ip-card">
-      				<p class="ip-text" text-center >192.168.0.1</p>
+      				<p class="ip-text" text-center>{{sender.ipAddress}}</p>
     			</ion-card>
     		</ion-col>
     		<ion-col col-4>
@@ -31,7 +31,7 @@
   		</ion-row>
   		<ion-row>
     		<ion-col>
-      			<h5 text-center>WAH-4P is waiting for new messages <br>from server at 192.168.0.1</h5>
+      			<h5 text-center>WAH-4P is waiting for new messages <br>from server at {{sender.ipAddress}}</h5>
     		</ion-col>
   		</ion-row>
 </ion-grid>
