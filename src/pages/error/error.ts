@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage} from '../home/home';
+import { SenderProvider} from '../../providers/sender/sender';
+
 /**
  * Generated class for the ErrorPage page.
  *
@@ -18,7 +20,7 @@ export class ErrorPage {
   errorTimer;
   errorInterval;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public sender:SenderProvider) {
   }
 
   ionViewDidEnter() {
