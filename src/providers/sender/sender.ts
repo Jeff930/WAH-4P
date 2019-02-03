@@ -12,6 +12,7 @@ export class SenderProvider {
 
   public LGU_Name;
   public totalMessages;
+  public ipAddress='192.6.8.1';
 
   constructor(public http: HttpClient) {
     console.log('Hello SenderProvider Provider');
