@@ -22,6 +22,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomePage {
 
   homeTimer;
+  homeTimeout;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public sms: SMS, public sender:SenderProvider,public http: HttpClient) {
   }
@@ -33,12 +34,13 @@ export class HomePage {
 
   getData(){
     this.getLGU();
-    setTimeout(() => { 
-      console.log("called");
+    this.homeTimeout=setTimeout(() => { 
+      console.log("homecalled");
       this.getMessages();}, 5000);
   }
   
   error(){
+    clearTimeout(this.homeTimeout);
     this.navCtrl.setRoot(ErrorPage);
   }
 
