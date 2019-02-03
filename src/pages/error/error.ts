@@ -28,13 +28,14 @@ export class ErrorPage {
   }
 
   startErrorTimer(){
-    setInterval(() => { 
+    this.errorInterval=setInterval(() => { 
       this.errorTimer--;
-      console.log("called");
+      console.log("intervalcalled");
     }, 1000);
     setTimeout(() => { 
       this.navCtrl.setRoot(HomePage);
-      console.log("called");
+      clearInterval(this.errorInterval);
+      console.log("timeoutcalled");
     }, 3000);
    
 
