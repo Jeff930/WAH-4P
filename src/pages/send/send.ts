@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SenderProvider} from '../../providers/sender/sender';
 
 /**
  * Generated class for the SendPage page.
@@ -15,11 +16,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SendPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public progress;
+  public messageDetails;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public sender:SenderProvider,) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SendPage');
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter SendPage');
+    this.messageDetails=this.sender.getMessages();
+    console.log(this.messageDetails);
+    this.sendMessage();
+  }
+
+  sendMessage(){
+    this.messageDetails.length;
   }
 
 }
