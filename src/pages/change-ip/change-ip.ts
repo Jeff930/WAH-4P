@@ -31,7 +31,7 @@ export class ChangeIpPage {
   }
 
   saveIP(){
-    this.sender.ipAddress=this.inputIpAddress;
+    this.sender.setIpAddress(this.inputIpAddress);
     this.returnToHome();
   }
 }
