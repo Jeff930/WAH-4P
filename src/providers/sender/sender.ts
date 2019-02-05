@@ -10,16 +10,34 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SenderProvider {
 
-  public LGU_Name;
+  public rhuName;
   public totalMessages;
+  public messageDetails;
   public ipAddress='192.6.8.1';
+  public protocol='http://';
 
   constructor(public http: HttpClient) {
     console.log('Hello SenderProvider Provider');
   }
 
-  sendMessages(any){
+  setMessages(messageDetails){
+    this.messageDetails=messageDetails;
+    this.totalMessages=messageDetails.length;
+    console.log(messageDetails.length);
+  }
 
+  getMessages(){
+    return this.messageDetails;
+  }
+
+  setRhuName(name){
+    this.rhuName=name;
+    console.log(this.rhuName);
+  }
+
+  setIpAddress(newIp){
+    this.ipAddress=newIp;
+    console.log(this.ipAddress);
   }
 
 }
