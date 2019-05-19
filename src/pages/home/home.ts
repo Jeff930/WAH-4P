@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ErrorPage} from '../error/error';
 import { ChangeIpPage} from '../change-ip/change-ip';
 import { SendPage } from '../send/send';
-import { SMS } from '@ionic-native/sms';
 import { SenderProvider} from '../../providers/sender/sender';
 import { HttpClient } from '@angular/common/http';
 /**
@@ -23,7 +22,7 @@ export class HomePage {
   public homeTimer;
   public homeTimeout;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public sms: SMS, public sender:SenderProvider,public http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sender:SenderProvider,public http: HttpClient) {
   }
 
   ionViewDidEnter() {
